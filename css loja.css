@@ -1,0 +1,66 @@
+body{
+    background-color: #EC6EA5;
+ 
+}
+.item1 {
+    background-color: #ffffff;
+   text-align: center;
+    color: #e06483;
+    height: 100px;
+    margin-top: -1.5%;
+    width: 101.5%;
+    margin-left: -1%;
+    position: relative;
+    
+}
+ 
+.sla{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+} 
+.ata{
+    font-family: "Poetsen One", Sans-serif;
+}
+ 
+.imgdiv{
+    width: 100px;
+    height:100px;
+    display: block;
+    margin-top: -6.5%;
+margin-left: 10%;
+}
+ .img{
+     width: 200px;
+     height:95px;
+ }
+ 
+ .tudo{
+     text-align: center;
+     font-family: "Nanum Gothic", sans-serif;
+     color: white;
+ }
+
+.img_produtos{
+   margin: 5px;
+   position:  relative;
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.img_produtos:hover{
+    background-color: rgb(194, 179, 179);
+}
+.castoro-titling-regular {
+    font-family: "Castoro Titling", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  
+  

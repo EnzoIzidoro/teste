@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍩Homer Donuts🍩</title>
+    <link rel="stylesheet" href="css loja.css">
+    
+</head>
+
+<body>
+
+  
+    <div class="item1">
+        <h1 class="sla">🍩Homer Dunuts🍩</h1>
+        <h3 class="ata">Confira nossas delicias</h3>
+        <div class="imgdiv">
+            <img class="img" src="homer deitado.jpg" alt="">
+            </div>
+        </div>
+       
+
+
+<div class="tudo">
+
+    <h2>Opções de donuts:</h2>
+   <div>
+   <img class="img_produtos" src="cb930bc8f4b087ce4d93734cf54ba692-removebg-preview.png" alt="" >
+   
+    <img class="img_produtos" src="Donuts_Simpsons-removebg-preview.png" alt="">
+    
+    <img class="img_produtos" src="Ring_ChocoPower-removebg-preview.png" alt="">
+    
+    <img class="img_produtos" src="dc-removebg-preview.png" alt="">
+    
+    <img class="img_produtos" src="b197c9853b1fe2db7cd5e48683a3183a-removebg-preview.png" alt="">
+    
+   </div>
+    <h2>Opções de salgado:</h2>
+    <img class="img_produtos" src="cox-removebg-preview.png" alt="">
+    <img class="img_produtos" src="e1c63a1256e2a256b1fb734ce8c691a5-removebg-preview.png" alt="">
+    <img class="img_produtos" src="9f575a6f4fe712aaeeb9df7049518ec6-removebg-preview.png" alt="">
+    <h2>Opções de bebida:</h2>
+    <img class="img_produtos" src="cf.png" alt="">
+    <img class="img_produtos" src="35bb673584d87301e98530a637134068-removebg-preview.png" alt="">
+    <img class="img_produtos" src="59164b684ea48c09368e3194ee01efc1-removebg-preview-removebg-preview.png" alt="">
+    <img class="img_produtos" src="mk.png" alt="">
+
+
+    <h2>Escolha:</h2>
+    <p>Donuts: <select name="" id="inDonuts">
+        <option value="0">Escolha</option>
+        <option value="10">Simpsons R$10,00</option>
+        <option value="8">Doce de leite R$8,00</option>
+        <option value="12">Nutella R$12,00</option>
+        <option value="9">Frutas vermelhas R$9,00</option>
+        <option value="14">Cookies and cream R$14,00</option>
+    </select></p>
+    <p>Salgados: <select name="" id="inSalgados">
+        <option value="0">Escolha</option>
+        <option value="5">Coxinha R$5,00</option>
+        <option value="4">Pão de queijo R$4,00</option>
+        <option value="6">Enroladinho R$6,00</option>
+    </select></p>
+    <p>Bebidas: <select name="" id="inBebidas">
+        <option value="0">Escolha</option>
+        <option value="9">Café R$9,00</option>
+        <option value="6">Refrigerante R$6,00</option>
+        <option value="14">Milkshake R$14,00</option>
+        <option value="22">Soda italiana R$22,00</option>
+    </select></p>
+    
+    <h2>Pagamento</h2>
+    <p>Escolha a forma de pagamento: <select name="" id="inPagamento">
+        <option value="Dinheiro">Dinheiro</option>
+        <option value="Cartão à vista">Cartão à vista</option>
+        <option value="Cartão 2x">Cartão 2x</option>
+        <option value="Cartão 3x">Cartão 3x</option>
+    </select></p>
+    
+    <button onclick="Finalizar()" class="botao">Finalizar compra</button>
+    <h3 id="outSaida"></h3>
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+<script>
+ 
+function Finalizar(){
+ 
+var D= Number(document.getElementById('inDonuts').value)
+var S= Number(document.getElementById('inSalgados').value)
+var B= Number(document.getElementById('inBebidas').value)
+var pagamento= (document.getElementById('inPagamento').value)
+var preco=D+S+B
+var valor;
+var desconto=0;
+var parcela=0;
+ 
+if(D!=0 && S!=0 && B!=0){
+        desconto= 15
+        valor=preco*0.85
+    }
+    else if((D==0 && S!=0 && B!=0) || (D!=0 && S==0 && B!=0) || (D!=0 && S!=0 && B==0)){
+        desconto= 10
+         valor=preco*0.9
+    }
+    else{
+        desconto=0 
+        valor=preco
+    }
+ 
+        switch(pagamento){
+            case 'Dinheiro': desconto= desconto+5; valor=valor*0.95; parcela=valor
+            break
+            case 'Cartão à vista': parcela= valor
+            break
+            case 'Cartão 2x': parcela= valor/2
+            break
+            case 'Cartão 3x': parcela= valor/3
+            break
+        }
+ 
+        document.getElementById('outSaida').innerHTML = 
+    "Resumo do pedido:<br>" +
+    "Total: R$" + preco.toFixed(2)+"<br>" +
+    "Desconto: " + desconto + "% ou R$"+(preco-valor).toFixed(2)+"<br>" +
+    "Total a pagar: R$" + valor.toFixed(2) + "<br>" +
+    "Forma de pagamento: " + pagamento +" R$" + parcela.toFixed(2);
+ 
+}
+ 
+
+ 
+ 
+</script>
+ 
+ 
+ 
+ 
+ 
+ 
+   
+</body>
+</html>
